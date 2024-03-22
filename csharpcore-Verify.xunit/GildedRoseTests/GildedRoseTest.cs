@@ -182,7 +182,7 @@ namespace GildedRoseTests
         [Fact]
         public void Given_The_Item_Is_A_Conjured_Item_When_A_Day_Passes_The_Quality_Value_Should_Decrease_By_2()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Conjured", SellIn = 5, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 5, Quality = 10 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
             Assert.Equal(8, Items[0].Quality);
@@ -191,7 +191,7 @@ namespace GildedRoseTests
         [Fact]
         public void Given_The_Item_Is_A_Conjured_Item_When_A_Day_Passes_The_Sellin_Value_Should_Decrease_By_1()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "Conjured", SellIn = 5, Quality = 10 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 5, Quality = 10 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
             Assert.Equal(4, Items[0].SellIn);

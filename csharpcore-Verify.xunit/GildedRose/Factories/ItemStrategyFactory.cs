@@ -16,6 +16,8 @@ namespace GildedRoseKata.Factories
                     return new BackstagePassesStrategy();
                 case "Sulfuras, Hand of Ragnaros":
                     return new LegendaryItemStrategy();
+                case "Conjured Mana Cake":
+                    return new CounjuredItemStrategy();
                 default:
                     return new NormalItemStrategy();
             }
