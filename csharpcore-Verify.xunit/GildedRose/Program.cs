@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GildedRoseKata.Factories;
+using System;
 using System.Collections.Generic;
 
 namespace GildedRoseKata
@@ -37,7 +38,7 @@ namespace GildedRoseKata
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            var app = new GildedRose(Items);
+            var app = new GildedRose(Items, new ItemStrategyFactory());
 
 
             for (var i = 0; i < 31; i++)
@@ -46,7 +47,7 @@ namespace GildedRoseKata
                 Console.WriteLine("name, sellIn, quality");
                 for (var j = 0; j < Items.Count; j++)
                 {
-                    System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
+                    Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
                 }
                 Console.WriteLine("");
                 app.UpdateQuality();
