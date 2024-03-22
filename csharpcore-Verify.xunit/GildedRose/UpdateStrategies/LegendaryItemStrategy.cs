@@ -2,7 +2,7 @@
 
 namespace GildedRoseKata.UpdateStrategies
 {
-    public class LegendaryItemStrategy : IUpdateItemStrategy
+    public class LegendaryItemStrategy : IItemStrategy
     {
         public void UpdateItem(Item item)
         {

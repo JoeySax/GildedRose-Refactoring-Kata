@@ -3,7 +3,7 @@ using System;
 
 namespace GildedRoseKata.UpdateStrategies
 {
-    public class NormalItemStrategy : IUpdateItemStrategy
+    public class NormalItemStrategy : IItemStrategy
     {
         public void UpdateItem(Item item)
         {

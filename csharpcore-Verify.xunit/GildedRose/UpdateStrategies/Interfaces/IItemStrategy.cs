@@ -1,6 +1,6 @@
 ﻿namespace GildedRoseKata.UpdateStrategies.Interfaces
 {
-    public interface IUpdateItemStrategy
+    public interface IItemStrategy
     {
         void UpdateItem(Item item);
     }

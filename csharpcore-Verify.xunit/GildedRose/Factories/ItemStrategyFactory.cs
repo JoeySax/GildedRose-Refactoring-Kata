@@ -1,26 +1,34 @@
-﻿using GildedRoseKata.Factories.Interfaces;
+﻿using GildedRoseKata.Constants;
+using GildedRoseKata.Factories.Interfaces;
 using GildedRoseKata.UpdateStrategies;
 using GildedRoseKata.UpdateStrategies.Interfaces;
+using System.Collections.Generic;
 
 namespace GildedRoseKata.Factories
 {
     public class ItemStrategyFactory : IItemStrategyFactory
     {
-        public IUpdateItemStrategy Create(string name)
+        private readonly Dictionary<string, IItemStrategy> itemStrategies;
+
+        public ItemStrategyFactory()
         {
-            switch (name)
+            itemStrategies = new Dictionary<string, IItemStrategy>
             {
-                case "Aged Brie":
-                    return new AgedBrieStrategy();
-                case "Backstage passes to a TAFKAL80ETC concert":
-                    return new BackstagePassesStrategy();
-                case "Sulfuras, Hand of Ragnaros":
-                    return new LegendaryItemStrategy();
-                case "Conjured Mana Cake":
-                    return new CounjuredItemStrategy();
-                default:
-                    return new NormalItemStrategy();
+                { ItemNames.AgedBrie, new AgedBrieStrategy() },
+                { ItemNames.BackstagePasses, new BackstagePassesStrategy() },
+                { ItemNames.Sulfuras, new LegendaryItemStrategy() },
+                { ItemNames.ConjuredManaCake, new ConjuredItemStrategy() }
+            };
+        }
+
+        public IItemStrategy Create(string name)
+        {
+            if (itemStrategies.TryGetValue(name, out IItemStrategy strategy))
+            {
+                return strategy;
             }
+
+            return new NormalItemStrategy();
         }
     }
 }

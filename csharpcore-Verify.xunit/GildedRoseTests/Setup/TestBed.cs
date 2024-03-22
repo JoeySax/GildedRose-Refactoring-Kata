@@ -1,4 +1,5 @@
 ﻿using GildedRoseKata;
+using GildedRoseKata.Constants;
 using JetBrains.Annotations;
 using System.Collections.Generic;
 
@@ -31,31 +32,31 @@ namespace GildedRoseTests.Setup
 
         internal TestBed WithNormalItem(int sellIn, int quality)
         {
-            WithItem("Normal Item", sellIn, quality);
+            WithItem(ItemNames.NormalItem, sellIn, quality);
             return this;
         }
 
         internal TestBed WithAgedBrie(int sellIn, int quality)
         {
-            WithItem("Aged Brie", sellIn, quality);
+            WithItem(ItemNames.AgedBrie, sellIn, quality);
             return this;
         }
 
         internal TestBed WithSulfuras(int sellIn, int quality)
         {
-            WithItem("Sulfuras, Hand of Ragnaros", sellIn, quality);
+            WithItem(ItemNames.Sulfuras, sellIn, quality);
             return this;
         }
 
         internal TestBed WithBackstagePass(int sellIn, int quality)
         {
-            WithItem("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+            WithItem(ItemNames.BackstagePasses, sellIn, quality);
             return this;
         }
 
         internal TestBed WithConjuredManaCake(int sellIn, int quality)
         {
-            WithItem("Conjured Mana Cake", sellIn, quality);
+            WithItem(ItemNames.ConjuredManaCake, sellIn, quality);
             return this;
         }
 
