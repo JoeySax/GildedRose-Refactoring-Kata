@@ -38,7 +38,7 @@ namespace GildedRoseKata
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            var app = new GildedRose(Items, new ItemStrategyFactory());
+            var app = new GildedRose(Items);
 
 
             for (var i = 0; i < 31; i++)

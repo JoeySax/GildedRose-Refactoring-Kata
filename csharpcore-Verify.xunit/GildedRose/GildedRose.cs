@@ -1,4 +1,5 @@
-﻿using GildedRoseKata.Factories.Interfaces;
+﻿using GildedRoseKata.Factories;
+using GildedRoseKata.Factories.Interfaces;
 using System.Collections.Generic;
 
 namespace GildedRoseKata
@@ -8,10 +9,10 @@ namespace GildedRoseKata
         private  IList<Item> Items;
         private readonly IItemStrategyFactory _itemStrategyFactory;
 
-        public GildedRose(IList<Item> Items, IItemStrategyFactory itemStrategyFactory)
+        public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
-            _itemStrategyFactory = itemStrategyFactory;
+            _itemStrategyFactory = new ItemStrategyFactory();
         }
 
         public void UpdateQuality()
